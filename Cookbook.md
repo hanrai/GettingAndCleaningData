@@ -1,7 +1,7 @@
 Cookbook
 ========================================================
 
-Please read features_info.txt and features. Tidy dataset share the same colname with train or test data.
+Please read features_info.txt and features. Tidy dataset share the same colnames with train or test data.
 
 ## Difference:
 ### Added column:
