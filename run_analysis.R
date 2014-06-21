@@ -34,4 +34,4 @@ data.extracted <- data[, c(grep("(mean|std)\\(",colnames(data)),
 data.tidy <- aggregate(. ~ subject + activity, data = data.extracted, mean)
 
 ## Save the tidy data
-write.csv(data.tidy, file = "tidy.csv.txt")
+write.csv(data.tidy, file = "tidy.csv.txt", row.names = FALSE)
