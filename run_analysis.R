@@ -18,7 +18,7 @@ data <- rbind(cbind(read.table(filename.train.data),
                     read.table(filename.test.labels)))
 
 ## 4 Appropriately labels the data set with descriptive variable names. 
-colnames(data) <- c(read.table(filename.features, stringsAsFactors=FALSE)$V2,
+colnames(data) <- c(read.table(filename.features, stringsAsFactors = FALSE)$V2,
                     "subject", "activity")
 
 ## 3 Uses descriptive activity names to name the activities in the data set
@@ -26,7 +26,7 @@ data$activity <- read.table(filename.activity.labels)$V2[data$activity]
 
 ## 2 Extracts only the measurements on the mean and standard deviation 
 ## for each measurement. 
-data.extracted <- data[, c(grep("(mean|std)\\(",colnames(data)), 
+data.extracted <- data[, c(grep("(mean|std)\\(", colnames(data)), 
                            grep("subject|activity", colnames(data)))]
 
 ## 5 Creates a second, independent tidy data set with the average of 
