@@ -17,7 +17,7 @@ Getting And Cleaning Data course project
 ### How script working:
 This script will archive these goals:
 * Goal 1. Merges the training and the test sets to create one data set.
-* Goal 2. Extracts only the measurements on the mean and standard deviation for  each measurement. 
+* Goal 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 * Goal 3. Uses descriptive activity names to name the activities in the data set.
 * Goal 4. Appropriately labels the data set with descriptive variable names. 
 * Goal 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
@@ -38,6 +38,15 @@ colnames(data) will return or set the colnames, I will set the colnames. read.ta
 Activity file is arranged in right order, so I can use them directly. Use data$activity as index, replay data$activity column with descriptive names. If you open subject_train.txt or subject_test.txt file, you will see they're all numbers. And those numbers and the line numbers of activity file are concordant. That's a good news, because I can forget about the merge process, and use data$activity as index directly to index the descriptive activity names inside the activity file. How to do that? Ignore the first column returned from read.table, and the 2nd column is the descriptive activity names for activities, then index them with data$activity directly. Great right?
 After this sentence, activities will be replaced with descriptive activity names.
 
-#### Goal 2: Then extract required data for tidy data. But I have to add two columns, 'subject' and 'activity'. I can create new variable to save them, but keep them in data frame will be nice. (Goal 2)
-#### Calculate the mean for each activity and each subject. All datas are ready to use, what you need is just a beautiful formula. (Goal 5)
+#### Goal 2: Extracts only the measurements on the mean and standard deviation for each measurement. 
+Then extract required data for tidy data. But I have to add two columns, 'subject' and 'activity'. I can create new variable to save them, but keep them in data frame will be nice. And it short the code, I don't have to type more letters later. Grep will return the index for matched items, so it's great, I can use it directly. And I found only mean() or std() have meaning, if you use mean as pattern, it will include some unwanted data, like meanfeq... So I use mean\\( as pattern.
+
+#### Goal 5: Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+Calculate the mean for each activity and each subject. All datas are ready to use, what you need is just a beautiful formula. Goal~~~ I love aggregate, I love formula too.
+
 #### Last step, save the data.
+
+### Why I want to write a short code for this project?
+Short means you can read it faster. You don't need to remember too much things, because it's short right? Normally, short means simple, so I hope this can help you to understand what I want to do easier. And the code will looks beautiful right?
+
+And the most important reason: I'm too lazy to write a lot of code~~~
