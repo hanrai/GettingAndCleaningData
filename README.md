@@ -47,6 +47,6 @@ Calculate the mean for each activity and each subject. All datas are ready to us
 #### Last step, save the data.
 
 ### Why I want to write a short code for this project?
-Short means you can read it faster. You don't need to remember too much things (variables, processes...), because it's short right? Normally, short means simple, so I hope this can help you to understand what I want to do easier. And the code will looks beautiful as well, right?
+Short means you can read it faster, because it has less letters. You don't need to remember too much things (variables, processes...), because it's short right? Normally, short means simple, so I hope this can help you to understand what I want to do easier. And the code will looks beautiful as well, right?
 
 And the most important reason: I'm too lazy to write so much code~~~ LOL
