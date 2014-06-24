@@ -1,4 +1,4 @@
-Cookbook
+Codebook
 ========================================================
 
 Please read features_info.txt and features.txt. Tidy dataset share the same colnames with train or test data. You can find almost all informations you need in those two documents.
