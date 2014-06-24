@@ -18,7 +18,7 @@ Getting And Cleaning Data course project
 This script will archive these goals:
 * Goal 1. Merges the training and the test sets to create one data set.
 * Goal 2. Extracts only the measurements on the mean and standard deviation for  each measurement. 
-* Goal 3. Uses descriptive activity names to name the activities in the data set
+* Goal 3. Uses descriptive activity names to name the activities in the data set.
 * Goal 4. Appropriately labels the data set with descriptive variable names. 
 * Goal 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
@@ -33,7 +33,11 @@ I use read.table here, because I don't need to change any default option here. S
 #### Goal 4: Appropriately labels the data set with descriptive variable names. 
 After Goal 1 finished, all datas are ready now. It's a good time to add names to columns. Why here? Because I can use column name for reference later if I done it here. It means I can use data$activity instead of data$Vxxx or data[[xxx]]. I read the features file and add 'subject' and 'activity' as colnames. Now every column have their name. 
 colnames(data) will return or set the colnames, I will set the colnames. read.table will return a data frame, so read.table(...)$V2 will return the 2nd col of that data frame. If you see the file, you will know it's a string vector. Great. This sentence means I'll read the file 'features.txt' as colnames for data. But data have two more column I added from Goal 1, so I need to add these column names to that vector returned by read.table()$V2. To combine vectors, use c(). 
-#### Activity file is arranged in right order, so I can use them directly. Use data$activity as index, replay data$activity column with descriptive names. (Goal 3)
-#### Then extract required data for tidy data. But I have to add two columns, 'subject' and 'activity'. I can create new variable to save them, but keep them in data frame will be nice. (Goal 2)
+
+#### Goal 3: Uses descriptive activity names to name the activities in the data set.
+Activity file is arranged in right order, so I can use them directly. Use data$activity as index, replay data$activity column with descriptive names. If you open subject_train.txt or subject_test.txt file, you will see they're all numbers. And those numbers and the line numbers of activity file are concordant. That's a good news, because I can forget about the merge process, and use data$activity as index directly to index the descriptive activity names inside the activity file. How to do that? Ignore the first column returned from read.table, and the 2nd column is the descriptive activity names for activities, then index them with data$activity directly. Great right?
+After this sentence, activities will be replaced with descriptive activity names.
+
+#### Goal 2: Then extract required data for tidy data. But I have to add two columns, 'subject' and 'activity'. I can create new variable to save them, but keep them in data frame will be nice. (Goal 2)
 #### Calculate the mean for each activity and each subject. All datas are ready to use, what you need is just a beautiful formula. (Goal 5)
 #### Last step, save the data.
