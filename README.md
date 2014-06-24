@@ -22,7 +22,7 @@ This script will archive these goals:
 * Goal 4. Appropriately labels the data set with descriptive variable names. 
 * Goal 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-I was trying to keep this script simple and short. So it's working in order 1, 4, 3, 2, 5. It will save some lines of code in this order(one goal one directive).
+I was trying to keep this script simple and short. So it's working in order 1, 4, 3, 2, 5. It will save some lines of code in this order(one goal one sentence).
 
 #### First, I create some virables for filenames, it will makes your code looks beautiful. 
 And if you unzip your data to somewhere else, you juse need to change data.dir to point to your data dir. Easy to change. :)
