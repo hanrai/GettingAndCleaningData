@@ -24,9 +24,12 @@ This script will archive these goals:
 
 I was trying to keep this script simple and short. So it's working in order 1, 4, 3, 2, 5. It will save some lines of code in this order(one goal one directive).
 
-#### First, I create some virables for filenames, it will makes your code looks beautiful. And if you unzip your data to somewhere else, you juse need to change data.dir to point to your data dir. Easy to change. :)
-#### Then I read all data files and combine them into one big data frame. 
-cbind will combine data, subject, activity for tran and test dataset. Then rbind will connect tran and test dataset. I use read.table here, because I don't need to change any default option here. See the document for read.table, you will see head = FALSE, sep = "", it's perfect for this project. And read.table will return a data.frame, I can use cbind to bind data, subject and activity together. Why? Because cbind(read.table("filename"), read.table("filename2")) means cbind(data.frame returned by read.table("filename"), and data.frame returned by read.table("filename2")). And then same for rbind, it will connect train data and test data together. Because rbind(cbind(...), cbind(...)) means rbind(data.frame returnd by the first cbind, and data.frame returned by the 2nd cbind). Finally I got a big and complete data.frame. And the code look nice right? (Goal 1)
+#### First, I create some virables for filenames, it will makes your code looks beautiful. 
+And if you unzip your data to somewhere else, you juse need to change data.dir to point to your data dir. Easy to change. :)
+
+#### Goal1: Read all data files and combine them into one big data frame. 
+I use read.table here, because I don't need to change any default option here. See the document for read.table, you will see head = FALSE, sep = "", it's perfect for this project, the shortest solution. And read.table will return a data.frame, so I can use cbind to bind subject and activity together directly. Why? Because cbind(read.table("filename"), read.table("filename2")) means cbind(data.frame returned by read.table("filename"), and data.frame returned by read.table("filename2")). And then the same for rbind, it will connect train data and test data together. Because rbind(cbind(...), cbind(...)) means rbind(data.frame returnd by the 1st cbind, and data.frame returned by the 2nd cbind). Finally I got a big and complete data.frame. The code look nice right?
+
 #### Because all datas are ready, so it's a good time to add colnames to datas. I read the features file and add 'subject' and 'activity' as colnames. Now every column have their name. (Goal 4)
 #### Activity file is arranged in right order, so I can use them directly. Use data$activity as index, replay data$activity column with descriptive names. (Goal 3)
 #### Then extract required data for tidy data. But I have to add two columns, 'subject' and 'activity'. I can create new variable to save them, but keep them in data frame will be nice. (Goal 2)
