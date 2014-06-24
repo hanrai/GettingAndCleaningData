@@ -5,7 +5,7 @@ Getting And Cleaning Data course project
 * README.md:            Readme file. Describe how script works.
 * run_analysis.R:       Script for this course project
 * tidy.csv.txt:         The result tidy file. It's a csv file, so you can just remove the '.txt' then view it in excel.
-* Cookbook.md:          Cookbook for tidy dataset.
+* Codebook.md:          Codebook for tidy dataset.
 
 ## run_analysis.R
 ### Usage:
